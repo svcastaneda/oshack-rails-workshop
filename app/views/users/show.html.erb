@@ -1,0 +1,8 @@
+<h1><%= current_user.name %></h1>
+
+<% @posts.each do |post| %>
+<div>
+  <h3><%= link_to post.title, post %></h3>
+  <p><%= post.body %></p>
+</div>
+<% end %>

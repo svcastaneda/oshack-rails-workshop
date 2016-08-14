@@ -1,0 +1,17 @@
+<%= link_to 'Back', posts_path %>
+
+<h1>
+  <%= @post.title %>
+</h1>
+
+<p>
+  <%= @post.body %>
+</p>
+
+<p>
+  written by: <%= @post.user.username %>
+</p>
+
+<% if current_user && current_user == @post.user %>
+  <%= link_to 'edit', edit_post_path(@post) %> | <%= link_to 'delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
